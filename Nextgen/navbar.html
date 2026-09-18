@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Next_Gen in Christ</title>
+
+    <style>
+
+    /* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* WHOLE PAGE */
+    body{
+font-family:Inter,Arial,sans-serif;
+background-color:#0f172a;
+color:white;
+}
+
+    /* NAVBAR */  /* HERO */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+/* HERO TEXT */
+.hero-text {
+    max-width: 750px;
+}
+
+/* SMALL INTRO TEXT */
+.hero-text p:first-child {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* MAIN HEADING */
+.hero h1 {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+/* DESCRIPTION */
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   LOGO AREA
+========================= */
+
+.hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 100px 60px;
+}
+
+
+/* GLOW BEHIND LOGO */
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: #15b2a3;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+    z-index: 0;
+}
+/* LOGO */
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+
+/* LOGO HOVER */
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+.hero button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+}
+/*navbar*/ 
+   nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+border-bottom:1px solid #1e293b;
+position:sticky;
+top:0;
+z-index:1000;
+background-color:#0f172a;
+}
+nav h2{
+font-size:22px;
+font-weight:bold;
+}
+nav div{
+display:flex;
+gap:30px;
+align-items:center;
+}
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+transition:0.3s;
+position:relative;
+}
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background-color:white;
+transition:0.3s;
+}
+nav a:hover{
+color:white;
+}
+nav a:hover::after{
+width:100%;
+}
+
+/* About */
+.about{
+padding:120px 60px;
+background-color:#111827;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+}
+.about-heading{
+padding-right:80px;
+border-right:1px solid #334155;
+}
+.about-heading p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.about-heading h2{
+font-size:48px;
+line-height:1.1;
+font-weight:800;
+}
+.about-content{
+padding-left:80px;
+max-width:650px;
+}
+.about-content p{
+font-size:18px;
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:25px;
+}
+
+/* =========================
+   WHAT WE DO
+========================= */
+.what-we-do {
+    padding: 120px 60px;
+    background-color: #0f172a;
+}
+/* SECTION TITLE */
+.section-title {
+    margin-bottom: 60px;
+}
+.section-title p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+.section-title h2 {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 800;
+}
+/* =========================
+   CARDS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+/* INDIVIDUAL CARD */
+.card {
+    min-height: 300px;
+    padding: 30px;
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+/* CARD NUMBER */
+.card-number {
+    font-size: 14px;
+    color: #64748b;
+}
+/* CARD TITLE */
+.card h3 {
+    font-size: 28px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+/* CARD DESCRIPTION */
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #475569;
+}
+
+/* =========================
+EVENTS
+========================= */
+.events{
+padding:120px 60px;
+background-color:#111827;
+}
+.events-header{
+margin-bottom:60px;
+}
+.events-header p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.events-header h2{
+font-size:56px;
+line-height:1;
+font-weight:800;
+}
+.event-card{
+display:flex;
+justify-content:space-between;
+min-height:500px;
+border:1px solid #1e293b;
+border-radius:20px;
+overflow:hidden;
+background-color:#0f172a;
+}
+.event-info{
+width:65%;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.event-tag{
+font-size:13px;
+letter-spacing:2px;
+color:#94a3b8;
+margin-bottom:25px;
+}
+.event-card h3{
+font-size:64px;
+line-height:1;
+margin-bottom:25px;
+}
+.event-card p{
+max-width:550px;
+font-size:17px;
+line-height:1.7;
+color:#cbd5e1;
+margin-bottom:40px;
+}
+.event-details{
+display:flex;
+gap:60px;
+margin-bottom:40px;
+}
+.event-details div{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+.event-details span{
+font-size:11px;
+letter-spacing:2px;
+color:#64748b;
+}
+.event-details strong{
+font-size:14px;
+}
+.event-button{
+display:inline-block;
+width:max-content;
+padding:14px 22px;
+background-color:white;
+color:#0f172a;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.event-button:hover{
+transform:translateY(-3px);
+}
+.event-side{
+width:35%;
+display:flex;
+align-items:flex-end;
+justify-content:flex-end;
+padding:40px;
+background-color:#1e293b;
+}
+.event-side span{
+font-size:100px;
+font-weight:800;
+color:#334155;
+}
+
+/* =========================
+OUTREACH
+========================= */
+.outreach{
+padding:140px 60px;
+background-color:#0f172a;
+}
+.outreach-top{
+max-width:900px;
+}
+.outreach-top p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.outreach-top h2{
+font-size:72px;
+line-height:1;
+font-weight:800;
+}
+.outreach-content{
+margin-top:100px;
+padding:50px 0;
+border-top:1px solid #1e293b;
+border-bottom:1px solid #1e293b;
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:60px;
+}
+.outreach-number{
+font-size:18px;
+color:#64748b;
+}
+.outreach-text{
+max-width:700px;
+}
+.outreach-text h3{
+font-size:32px;
+margin-bottom:20px;
+}
+.outreach-text p{
+font-size:18px;
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+.outreach-button{
+display:inline-block;
+padding:14px 22px;
+border:1px solid #475569;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.outreach-button:hover{
+background-color:white;
+color:#0f172a;
+}
+.outreach-bottom{
+display:flex;
+justify-content:space-between;
+margin-top:60px;
+font-size:14px;
+letter-spacing:3px;
+color:#64748b;
+}
+/* =========================
+GALLERY
+========================= */
+.gallery{
+padding:120px 60px;
+background-color:#111827;
+}
+.gallery-header{
+margin-bottom:60px;
+}
+.gallery-header p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.gallery-header h2{
+font-size:56px;
+line-height:1;
+font-weight:800;
+}
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.gallery-item{
+height:350px;
+overflow:hidden;
+border-radius:16px;
+background-color:#0f172a;
+}
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:0.5s;
+}
+.gallery-item:hover img{
+transform:scale(1.05);
+}
+
+/* =========================
+JOIN SECTION
+========================= */
+.join{
+padding:140px 60px;
+background-color:#e2e8f0;
+color:#0f172a;
+text-align:center;
+}
+.join-content{
+max-width:850px;
+margin:0 auto;
+}
+.join-content>p:first-child{
+font-size:13px;
+letter-spacing:3px;
+color:#475569;
+margin-bottom:25px;
+}
+.join h2{
+font-size:72px;
+line-height:1;
+font-weight:800;
+margin-bottom:30px;
+}
+.join-content>p{
+max-width:650px;
+margin:0 auto 40px;
+font-size:18px;
+line-height:1.7;
+color:#475569;
+}
+.join-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+}
+.join-button{
+padding:15px 25px;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.join-button.primary{
+background-color:#0f172a;
+color:white;
+}
+.join-button.secondary{
+border:1px solid #94a3b8;
+color:#0f172a;
+}
+.join-button:hover{
+transform:translateY(-3px);
+}
+
+/* =========================
+FOOTER
+========================= */
+footer{
+padding:70px 60px 30px;
+background-color:#020617;
+color:white;
+}
+.footer-top{
+padding-bottom:50px;
+border-bottom:1px solid #1e293b;
+}
+.footer-top h2{
+font-size:28px;
+margin-bottom:15px;
+}
+.footer-top p{
+color:#94a3b8;
+font-size:15px;
+}
+.footer-links{
+display:flex;
+gap:30px;
+padding:35px 0;
+border-bottom:1px solid #1e293b;
+}
+.footer-links a{
+color:#cbd5e1;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+.footer-links a:hover{
+color:white;
+}
+.footer-bottom{
+display:flex;
+justify-content:space-between;
+padding-top:25px;
+color:#64748b;
+font-size:12px;
+}
+
+@media(max-width:900px){
+nav{
+padding:20px 30px;
+}
+nav div{
+gap:18px;
+}
+.hero{
+padding:60px 30px;
+gap:40px;
+}
+.hero h1{
+font-size:44px;
+letter-spacing:-1px;
+}
+.hero-image img{
+max-width:350px;
+}
+.about{
+padding:90px 30px;
+gap:40px;
+}
+.about-heading h2{
+font-size:40px;
+}
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+.events{
+padding:90px 30px;
+}
+.event-card h3{
+font-size:50px;
+}
+.event-info{
+padding:40px;
+}
+.outreach{
+padding:100px 30px;
+}
+.outreach-top h2{
+font-size:56px;
+}
+.gallery{
+padding:90px 30px;
+}
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+.join{
+padding:100px 30px;
+}
+.join h2{
+font-size:56px;
+}
+footer{
+padding:60px 30px 25px;
+}
+}
+@media(max-width:600px){
+nav{
+padding:20px;
+flex-direction:column;
+gap:20px;
+}
+nav div{
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 60px;
+gap:80px;
+position:relative;
+overflow:hidden;
+}
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background-color:#1e293b;
+border-radius:50%;
+filter:blur(120px);
+opacity:0.5;
+right:-150px;
+top:50%;
+transform:translateY(-50%);
+}
+.hero-text{
+max-width:700px;
+position:relative;
+z-index:2;
+}
+.hero-text p:first-child{
+display:inline-block;
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:25px;
+padding-bottom:12px;
+border-bottom:1px solid #334155;
+}
+.hero h1{
+font-size:78px;
+line-height:0.95;
+margin-bottom:30px;
+font-weight:800;
+letter-spacing:-3px;
+}
+.hero-text p{
+font-size:18px;
+line-height:1.7;
+color:#cbd5e1;
+margin-bottom:35px;
+}
+.hero button{
+padding:16px 30px;
+border:none;
+border-radius:8px;
+background-color:white;
+color:#0f172a;
+font-size:14px;
+font-weight:700;
+letter-spacing:0.5px;
+cursor:pointer;
+transition:0.3s;
+}
+.hero button:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(255,255,255,0.12);
+}
+.hero-image{
+width:45%;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+z-index:2;
+}
+.hero-image::before{
+content:"";
+position:absolute;
+width:380px;
+height:380px;
+background-color:#334155;
+border-radius:50%;
+filter:blur(90px);
+opacity:0.6;
+z-index:0;
+}
+.hero-image img{
+width:100%;
+max-width:450px;
+height:auto;
+position:relative;
+z-index:1;
+transition:0.4s;
+}
+.hero-image img:hover{
+transform:scale(1.05) rotate(1deg);
+}
+.about{
+padding:80px 20px;
+grid-template-columns:1fr;
+gap:40px;
+}
+.about-heading h2{
+font-size:36px;
+}
+.about-content p{
+font-size:16px;
+}
+.what-we-do{
+padding:80px 20px;
+}
+.section-title h2{
+font-size:44px;
+}
+.card{
+min-height:320px;
+padding:30px;
+background-color:#111827;
+border:1px solid #1e293b;
+border-radius:16px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+}
+.card::before{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+background-color:#334155;
+border-radius:50%;
+filter:blur(70px);
+opacity:0;
+right:-80px;
+top:-80px;
+transition:0.4s;
+}
+.card-number{
+font-size:13px;
+color:#64748b;
+position:relative;
+z-index:1;
+}
+.card h3{
+font-size:30px;
+margin-top:auto;
+margin-bottom:15px;
+position:relative;
+z-index:1;
+}
+.card p{
+font-size:15px;
+line-height:1.7;
+color:#94a3b8;
+position:relative;
+z-index:1;
+}
+.card:hover{
+transform:translateY(-10px);
+border-color:#475569;
+}
+.card:hover::before{
+opacity:0.6;
+}
+.events{
+padding:80px 20px;
+}
+.events-header h2{
+font-size:44px;
+}
+.event-card{
+flex-direction:column;
+}
+.event-info{
+width:100%;
+padding:35px 25px;
+}
+.event-card h3{
+font-size:44px;
+}
+.event-details{
+flex-direction:column;
+gap:20px;
+}
+.event-side{
+width:100%;
+min-height:180px;
+}
+.outreach{
+padding:90px 20px;
+}
+.outreach-top h2{
+font-size:44px;
+}
+.outreach-content{
+margin-top:60px;
+grid-template-columns:1fr;
+gap:25px;
+}
+.outreach-text h3{
+font-size:26px;
+}
+.outreach-text p{
+font-size:16px;
+}
+.outreach-bottom{
+flex-wrap:wrap;
+gap:20px;
+}
+.gallery{
+padding:80px 20px;
+}
+.gallery-header h2{
+font-size:44px;
+}
+.gallery-grid{
+grid-template-columns:1fr;
+}
+.gallery-item{
+height:300px;
+}
+.join{
+padding:90px 20px;
+}
+.join h2{
+font-size:44px;
+}
+.join-content>p{
+font-size:16px;
+}
+.join-buttons{
+flex-direction:column;
+align-items:center;
+}
+.join-button{
+width:100%;
+max-width:280px;
+}
+.footer-links{
+flex-wrap:wrap;
+gap:18px;
+}
+.footer-bottom{
+flex-direction:column;
+gap:10px;
+}
+}
+.hero-text{
+animation:fadeUp 1s ease forwards;
+}
+.hero-image{
+animation:fadeIn 1.2s ease forwards;
+}
+.card{
+animation:fadeUp 0.8s ease forwards;
+}
+.event-card{
+animation:fadeUp 0.8s ease forwards;
+}
+.gallery-item{
+animation:fadeUp 0.8s ease forwards;
+}
+.join-content{
+animation:fadeUp 0.8s ease forwards;
+}
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(0.95);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+</style>
+    
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Next_Gen in Christ</h2>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">Outreach</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+    <div class="hero-text">
+
+        <p>WELCOME TO NEXT_GEN IN CHRIST</p>
+
+        <h1>
+            WE ARE THE<br>
+            NEXT GENERATION.
+        </h1>
+
+        <p>
+            Called by Christ. Built by His Word.
+            Sent with a purpose.
+        </p>
+
+        <button>JOIN THE MOVEMENT</button>
+
+    </div>
+
+
+    <div class="hero-image">
+        <img src="logo1.png" alt="NextGen in Christ">
+    </div>
+
+</section>
+<!-- ABOUT SECTION -->
+
+<section class="about">
+
+    <div class="about-heading">
+
+        <p>WHO WE ARE</p>
+
+        <h2>
+            WE'RE NOT JUST<br>
+            ANOTHER YOUTH GROUP.
+        </h2>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+            NextGen in Christ is a generation of young people
+            choosing to follow Jesus, grow in His Word, live out
+            their faith, and take the Gospel beyond the four walls.
+        </p>
+
+        <p>
+            We gather to worship, learn, build real friendships,
+            serve one another, and become the people God has
+            called us to be.
+        </p>
+
+    </div>
+</section>
+<!-- WHAT WE DO SECTION -->
+
+<section class="what-we-do">
+
+    <div class="section-title">
+
+        <p>WHAT WE DO</p>
+
+        <h2>
+            FAITH THAT<br>
+            MOVES.
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <span class="card-number">01</span>
+            <h3>WORD</h3>
+            <p>
+                We grow deeper in God's Word and learn
+                how to live out our faith every day.
+            </p>
+        </div>
+        <!-- CARD 2 -->
+        <div class="card">
+            <span class="card-number">02</span>
+            <h3>WORSHIP</h3>
+            <p>
+                We come together to worship Jesus
+                with everything we have.
+            </p>
+        </div>
+        <!-- CARD 3 -->
+        <div class="card">
+            <span class="card-number">03</span>
+            <h3>FELLOWSHIP</h3>
+            <p>
+                We build genuine friendships,
+                encourage one another, and grow together.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <span class="card-number">04</span>
+            <h3>OUTREACH</h3>
+            <p>
+                We take the Gospel beyond the four walls
+                and share the love of Christ with others.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS SECTION -->
+<section class="events">
+<div class="events-header">
+<p>WHAT'S HAPPENING</p>
+<h2>UPCOMING<br>EVENTS.</h2>
+</div>
+<div class="event-card">
+<div class="event-info">
+<span class="event-tag">FREINDS FELLOWSHIP</span>
+<h3>WHERE FREINDS<br>MEETS HIS PRESENCE.</h3>
+<p> Youth Services : Every Last Sunday of Each Month.</p>
+<div class="event-details">
+<div><span>DATE</span><strong>26TH OF AUGUST 2026</strong></div>
+<div><span>LOCATION</span><strong>ADONAI CHURCH</strong></div>
+</div>
+<a href="#" class="event-button">VIEW EVENT →</a>
+</div>
+<div class="event-side">
+<span>03</span>
+</div>
+</div>
+</section>
+
+<!-- OUTREACH SECTION -->
+
+<section class="outreach">
+<div class="outreach-top">
+<p>BEYOND THE FOUR WALLS</p>
+<h2>TAKE THE<br>GOSPEL WITH YOU.</h2>
+</div>
+<div class="outreach-content">
+<div class="outreach-number">01</div>
+<div class="outreach-text">
+<h3>FAITH IS MEANT TO BE LIVED OUT.</h3>
+<p>We don't want to keep what God has given us inside a building. Next_Gen is about stepping outside, serving people, building relationships, and sharing the hope of Jesus wherever God sends us.</p>
+<a href="#" class="outreach-button">OUR OUTREACH →</a>
+</div>
+</div>
+<div class="outreach-bottom">
+<span>WORD</span>
+<span>LOVE</span>
+<span>SERVE</span>
+<span>GO</span>
+</div>
+</section>
+ 
+<!-- GALLERY SECTION -->
+<section class="gallery">
+<div class="gallery-header">
+<p>OUR MOMENTS</p>
+<h2>THE JOURNEY<br>SO FAR.</h2>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="w2.jpeg" alt="NextGen Youth Camp"></div>
+<div class="gallery-item"><img src="group1.jpeg" alt="NextGen Youth Camp"></div>
+<div class="gallery-item"><img src="images/worship.jpg" alt="NextGen Worship"></div>
+<div class="gallery-item"><img src="images/outreach.jpg" alt="NextGen Outreach"></div>
+<div class="gallery-item"><img src="images/fellowship.jpg" alt="NextGen Fellowship"></div>
+<div class="gallery-item"><img src="images/event.jpg" alt="NextGen Event"></div>
+</div>
+</section>
+
+<!-- JOIN SECTION -->
+<section class="join" id="contact">
+<div class="join-content">
+<p>READY TO TAKE THE NEXT STEP?</p>
+<h2>THERE'S A PLACE<br>FOR YOU HERE.</h2>
+<p>Come as you are. Grow in Christ. Find your people. Be part of what God is doing through the next generation.</p>
+<div class="join-buttons">
+<a href="#" class="join-button primary">JOIN NEXT_GEN →</a>
+<a href="#" class="join-button secondary">CONTACT US</a>
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<h2>Next_Gen in Christ</h2>
+<p>Called by Christ. Built by His Word. Sent with a purpose.</p>
+</div>
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#ministries">Ministries</a>
+<a href="#events">Events</a>
+<a href="#outreach">Outreach</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="footer-bottom">
+<p>© 2021 Next_Gen in Christ. All rights reserved.</p>
+<p>Made for the next generation.</p>
+</div>
+</footer>
+
+</body>
+
+</html>
