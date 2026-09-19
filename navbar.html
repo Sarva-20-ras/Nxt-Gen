@@ -197,7 +197,86 @@ line-height:1.8;
 color:#cbd5e1;
 margin-bottom:25px;
 }
+/* HOW WE CAME TO BE */
 
+.story {
+    padding: 120px 60px;
+    background-color: #f8fafc;
+    color: #0f172a;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 90px;
+}
+
+.story-heading {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.story-heading > p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.story-heading h2 {
+    font-size: 56px;
+    line-height: 1.05;
+    font-weight: 800;
+    margin: 0 0 50px;
+}
+
+.story-heading h2 span {
+    color: #2563eb;
+}
+
+.story-verse {
+    border-left: 3px solid #2563eb;
+    padding-left: 25px;
+    max-width: 450px;
+}
+
+.story-verse p {
+    font-size: 18px;
+    line-height: 1.7;
+    font-style: italic;
+    color: #334155;
+    margin: 0 0 15px;
+}
+
+.story-verse span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.story-content {
+    max-width: 750px;
+}
+
+.story-content > p {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #475569;
+    margin: 0 0 28px;
+}
+
+.story-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #cbd5e1;
+    margin: 55px 0;
+}
+
+.story-content h3 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #2563eb;
+    margin-bottom: 25px;
+}
 /* =========================
    WHAT WE DO
 ========================= */
@@ -384,18 +463,34 @@ transition:0.3s;
 .event-button:hover{
 transform:translateY(-3px);
 }
+
+/* ADDED: GATHER CARD IMAGE AREA - controls the panel containing 01 */
 .event-side{
 width:35%;
 display:flex;
 align-items:flex-end;
 justify-content:flex-end;
 padding:40px;
+position:relative;
+overflow:hidden;
 background-color:#1e293b;
+background-image:url('ff.png');
+background-size:cover;
+background-position:center;
+}
+.event-side::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(2,6,23,0.45);
 }
 .event-side span{
 font-size:100px;
 font-weight:800;
-color:#334155;
+color:white;
+position:relative;
+z-index:1;
+text-shadow:0 3px 12px rgba(0,0,0,0.5);
 }
 
 /* =========================
@@ -428,9 +523,31 @@ display:grid;
 grid-template-columns:1fr 3fr;
 gap:60px;
 }
+
+/* ADDED: OUTREACH IMAGE AREA - controls the left panel containing 01 */
 .outreach-number{
 font-size:18px;
-color:#64748b;
+color:white;
+min-height:240px;
+padding:30px;
+display:flex;
+align-items:flex-end;
+position:relative;
+overflow:hidden;
+background-image:url('out.jpeg');
+background-size:cover;
+background-position:center;
+}
+.outreach-number::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(2,6,23,0.45);
+}
+.outreach-number span{
+position:relative;
+z-index:1;
+text-shadow:0 3px 12px rgba(0,0,0,0.5);
 }
 .outreach-text{
 max-width:700px;
@@ -495,7 +612,8 @@ grid-template-columns:repeat(4,1fr);
 gap:20px;
 }
 .gallery-item{
-height:350px;
+height:auto;
+align-self:start;
 overflow:hidden;
 border-radius:16px;
 background-color:#0f172a;
@@ -503,8 +621,8 @@ position:relative;
 }
 .gallery-item img{
 width:100%;
-height:100%;
-object-fit:cover;
+height:auto;
+object-fit:contain;
 display:block;
 transition:0.5s;
 }
@@ -1188,7 +1306,33 @@ line-height:1.4;
         font-size: 40px;
     }
 
+/* STORY — TABLET */
 
+.story {
+    padding: 90px 40px;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.story-heading {
+    position: static;
+}
+
+.story-heading h2 {
+    font-size: 48px;
+}
+
+.story-verse {
+    max-width: 600px;
+}
+
+.story-content {
+    max-width: 100%;
+}
+
+.story-content > p {
+    font-size: 17px;
+}
     /* =========================
        WHAT WE DO — TABLET
     ========================= */
@@ -1440,6 +1584,51 @@ line-height:1.4;
         font-size: 16px;
     }
 
+    /* STORY — MOBILE */
+
+.story {
+    padding: 80px 25px;
+    display: block;
+}
+
+.story-heading {
+    margin-bottom: 55px;
+}
+
+.story-heading > p {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.story-heading h2 {
+    font-size: 38px;
+    line-height: 1.05;
+    margin-bottom: 40px;
+}
+
+.story-verse {
+    padding-left: 18px;
+}
+
+.story-verse p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.story-content > p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.story-divider {
+    margin: 45px 0;
+}
+
+.story-content h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
     /* =========================
        WHAT WE DO — MOBILE
@@ -1552,7 +1741,7 @@ line-height:1.4;
     }
 
     .gallery-item {
-        height: 300px;
+        height: auto;
     }
 
 
@@ -1606,25 +1795,33 @@ line-height:1.4;
        TEAM — MOBILE
     ========================= */
 
-    .team {
-        padding: 80px 20px;
-    }
+.team{
+padding:80px 20px;
+overflow:hidden;
+}
+.team-track{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:50px;
+overflow-x:auto;
+padding:20px 5px 30px;
+}
+.team-card{
+min-width:260px;
+width:260px;
+height:300px;
+flex-shrink:0;
+margin:0;
+}
+.team-header{
+flex-direction:column;
+align-items:flex-start;
+gap:30px;
+}
+.team-header h2{
+font-size:44px;
+}
 
-    .team-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-    }
-
-    .team-header h2 {
-        font-size: 44px;
-    }
-
-    .team-card {
-        min-width: 260px;
-        width: 260px;
-        height: 370px;
-    }
 
 
     /* =========================
@@ -1648,34 +1845,48 @@ line-height:1.4;
 }
 
 /*navbar css for mobile and all*/
-.menu-btn{
-display:none;
+nav .menu-btn {
+    display: none;
 }
-@media(max-width:900px){
-nav{
-padding:20px 30px;
+
+nav .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
-.menu-btn{
-display:block;
-background:none;
-border:none;
-color:white;
-font-size:28px;
-cursor:pointer;
+
+@media (max-width: 900px) {
+    nav {
+        padding: 20px 30px;
+        flex-wrap: wrap;
+    }
+
+    nav .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
 }
-nav .nav-links{
-display:none;
-flex-direction:column;
-gap:20px;
-width:100%;
-padding-top:20px;
-}
-nav .nav-links.active{
-display:flex;
-}
-nav{
-flex-wrap:wrap;
-}
+
+@media (min-width: 901px) {
+    nav .menu-btn {
+        display: none !important;
+    }
 }
 
 </style>
@@ -1716,8 +1927,8 @@ flex-wrap:wrap;
             Sent with a purpose.
         </p>
 
-        <button>JOIN THE MOVEMENT</button>
-
+        <div><button type="button" onclick="window.location.href='https://forms.gle/K2kBDkpymLZdK19L6';">JOIN THE MOVEMENT</button>
+        </div>
     </div>
 
 
@@ -1729,20 +1940,16 @@ flex-wrap:wrap;
 <!-- ABOUT SECTION -->
 
 <section class="about" id="about">
-
-
+    <div class="about-heading">
         <p>WHO WE ARE</p>
 
         <h2>
             WE'RE NOT JUST<br>
             ANOTHER YOUTH GROUP.
         </h2>
-
     </div>
 
-
     <div class="about-content">
-
         <p>
             NextGen in Christ is a generation of young people
             choosing to follow Jesus, grow in His Word, live out
@@ -1754,7 +1961,6 @@ flex-wrap:wrap;
             serve one another, and become the people God has
             called us to be.
         </p>
-
     </div>
 </section>
 
@@ -1780,7 +1986,7 @@ flex-wrap:wrap;
         <!-- CARD 1 -->
 
         <div class="card">
-             <img src="Word.jpg" alt="WORD">
+             <img src="Word.JPG" alt="WORD">
             <span class="card-number">01</span>
             <h3>WORD</h3>
             <p>
@@ -1790,7 +1996,7 @@ flex-wrap:wrap;
         </div>
         <!-- CARD 2 -->
         <div class="card">
-            <img src="worship.jpg" alt="WORSHIP">
+            <img src="worship.JPG" alt="WORSHIP">
             <span class="card-number">02</span>
             <h3>WORSHIP</h3>
             <p>
@@ -1800,7 +2006,7 @@ flex-wrap:wrap;
         </div>
         <!-- CARD 3 -->
         <div class="card">
-            <img src="Fellowship.jpg" alt="FELLOWSHIP">
+            <img src="Fellowship.JPG" alt="FELLOWSHIP">
             <span class="card-number">03</span>
             <h3>FELLOWSHIP</h3>
             <p>
@@ -1811,7 +2017,7 @@ flex-wrap:wrap;
 
         <!-- CARD 4 -->
         <div class="card">
-            <img src="outreach.jpg" alt="OUTREACH">
+            <img src="outreach.JPG" alt="OUTREACH">
             <span class="card-number">04</span>
             <h3>OUTREACH</h3>
             <p>
@@ -1826,7 +2032,7 @@ flex-wrap:wrap;
 
 <section class="leaders" id="leaders">
 <div class="leaders-image">
-<img src="leaders.jpg" alt="Ps. Ashwin and Ps. Rebecca">
+<img src="leaders.JPG" alt="Ps. Ashwin and Ps. Rebecca">
 </div>
 <div class="leaders-content">
 <p>OUR LEADERS</p>
@@ -1840,6 +2046,101 @@ flex-wrap:wrap;
 <span><h4> JUDGE 2:10</h4></span>
 </div>
 </div>
+</section>
+<!-- STORY SECTION -->
+<section class="story" id="story">
+
+    <div class="story-heading">
+
+        <p>HOW WE CAME TO BE</p>
+
+        <h2>
+            CARRYING THE<br>
+            <span>BATON OF FAITH.</span>
+        </h2>
+
+        <div class="story-verse">
+            <p>
+                "When all that generation had been gathered to their
+                fathers, another generation arose after them who did
+                not know the Lord nor the work which He had done
+                for Israel."
+            </p>
+
+            <span>Judges 2:10</span>
+        </div>
+
+    </div>
+
+
+    <div class="story-content">
+
+        <p>
+            Post covid we were witnessing an alarming increase in
+            youngsters turning away from their faith. It wasn't a
+            sudden change that materialised overnight. But the world
+            was creeping into our churches subtly but surely.
+        </p>
+
+        <p>
+            It seems our guards were down and our people were not
+            prepared to face the problems looming in the corner.
+        </p>
+
+        <p>
+            We noticed a huge generational gap in churches which
+            meant a huge gap in perspective, world views etc.
+            Faith and belief systems were being affected.
+        </p>
+
+        <p>
+            Issues relating to youths were rarely addressed.
+            Their queries went unnoticed... unanswered.
+            They (youth) were expected to know, to understand.
+        </p>
+
+        <p>
+            God clearly spoke to us from Judges 2:10, we prayed
+            and followed His leading and that is how the first
+            youth camp came into being.
+        </p>
+
+
+        <div class="story-divider"></div>
+
+
+        <h3>WHY WE EXIST</h3>
+
+        <p>
+            Youth Camp organised by Next Gen in Christ aims to help
+            each youngster to turn to Christ. To know God as He is.
+            To be healed mentally, spiritually and emotionally.
+            To be rooted in His word, uncompromised.
+        </p>
+
+        <p>
+            To be leaders, trained, ready and equipped to lead
+            others to Christ and to be strong pillars for growth
+            and support in their respective churches. To carry
+            forward the baton of faith in Christ to the upcoming
+            generations.
+        </p>
+
+
+        <div class="story-divider"></div>
+
+
+        <h3>THE GENERATION WE'RE BUILDING</h3>
+
+        <p>
+            Next Gen in Christ is a community of Christ centered
+            youngsters, who are carrying the Faith baton forward,
+            influencing their peers in their neighbourhood, schools,
+            colleges and basically wherever they go.
+        </p>
+
+    </div>
+
 </section>
 
 <!-- TEAM SECTION -->
@@ -1923,7 +2224,7 @@ flex-wrap:wrap;
 <img src="mercy.jpeg" alt="Team Member">
 <div class="team-info">
 <span>MEDIA TEAM</span>
-<h3>Mercy Chettri</h3>
+<h3>Mercy Chhetri</h3>
 <p><b>Handles Media, Design, Photography, and Content &<BR>Serves in Worship Team </b></p>
 </div>
 </div>
@@ -1965,7 +2266,7 @@ flex-wrap:wrap;
 </div>
 <!--rose-->
 <div class="team-card">
-<img src="rose.jpeg" alt="Team Member">
+<img src="Rose.jpeg" alt="Team Member">
 <div class="team-info">
 <span>USHER</span>
 <h3>Rose Jajoo </h3>
@@ -1974,7 +2275,7 @@ flex-wrap:wrap;
 </div>
 <!--shakuntala-->
 <div class="team-card">
-<img src="shakuntala.jpeg" alt="Team Member">
+<img src="Shakuntala.jpeg" alt="Team Member">
 <div class="team-info">
 <span>USHER</span>
 <h3>Shakuntala Limboo</h3>
@@ -1996,7 +2297,7 @@ flex-wrap:wrap;
 <div class="team-info">
 <span>USHER</span>
 <h3>Jonah Lama</h3>
-<p><b>Our Young Usher with a passion for serving and helping.</b></p>
+<p><b>Our of our Young Usher with a passion for serving and helping.</b></p>
 </div>
 </div>
 <!--james-->
@@ -2032,11 +2333,13 @@ flex-wrap:wrap;
 <h3>WHERE FREINDS<br>MEETS HIS PRESENCE.</h3>
 <p> Youth Services : Every Last Sunday of Each Month.</p>
 <div class="event-details">
-<div><span>DATE</span><strong>26TH OF AUGUST 2026</strong></div>
+<div><span>DATE</span><strong id="event-date"></strong></div>
 <div><span>LOCATION</span><strong>ADONAI CHURCH</strong></div>
+<div><span>TIME</span><strong>4:00 PM</strong></div>
 </div>
 <a href="#" class="event-button">VIEW EVENT →</a>
 </div>
+<!-- ADDED: image appears only in the gather card's 01 panel -->
 <div class="event-side">
 <span>01</span>
 </div>
@@ -2051,11 +2354,12 @@ flex-wrap:wrap;
 <h2>TAKE THE<br>GOSPEL WITH YOU.</h2>
 </div>
 <div class="outreach-content">
-<div class="outreach-number">01</div>
+<!-- ADDED: image appears only in the outreach section's 01 panel -->
+<div class="outreach-number"><span>01</span></div>
 <div class="outreach-text">
 <h3>FAITH IS MEANT TO BE LIVED OUT.</h3>
 <p>We don't want to keep what God has given us inside a building. Next_Gen is about stepping outside, serving people, building relationships, and sharing the hope of Jesus wherever God sends us.</p>
-<a href="#outreach" id="outreach" class="outreach-button">OUR OUTREACH →</a>
+<a href="#outreach" class="outreach-button">OUR OUTREACH →</a>
 </div>
 </div>
 <div class="outreach-bottom">
@@ -2067,7 +2371,7 @@ flex-wrap:wrap;
 </section>
  
 <!-- GALLERY SECTION -->
-<section class="gallery">
+<section class="gallery" id="gallery">
 <div class="gallery-header">
 <p>OUR MOMENTS</p>
 <h2>THE JOURNEY<br>SO FAR.</h2>
@@ -2078,24 +2382,40 @@ flex-wrap:wrap;
 <h3>Worship Team 2026</h3>
 </div>
 <div class="gallery-item">
-    <img src="group1.jpeg" alt="NextGen Youth Camp">
-    <h3>Next_Gen 2026</h3>
+<img src="group1.jpeg" alt="NextGen Youth Camp">
+<h3>Next_Gen 2026</h3>
 </div>
 <div class="gallery-item">
-    <img src="images/worship.jpg" alt="NextGen Worship">
-    <h3>Worship Service</h3>
+    <img src="gp.JPG" alt="NextGen Youth Camp">
+    <h3>Next_Gen 2025</h3>
 </div>
 <div class="gallery-item">
-    <img src="images/outreach.jpg" alt="NextGen Outreach">
-    <h3>Outreach Event</h3>
+    <img src="rajat.JPG" alt="NextGen Youth Camp">
+    <h3>Next_Gen 2025 ft. <br> Rajat bk. & Team </h3>
 </div>
 <div class="gallery-item">
-    <img src="images/fellowship.jpg" alt="NextGen Fellowship">
-    <h3>Fellowship Gathering</h3>
+    <img src="wor2.JPG" alt="NextGen Youth Camp">
+    <h3>Worship Team A 2025</h3>
 </div>
 <div class="gallery-item">
-    <img src="images/event.jpg" alt="NextGen Event">
-    <h3>Special Event</h3>
+    <img src="wor1.JPG" alt="NextGen Youth Camp">
+    <h3>Worship Team B 2025</h3>
+</div>
+<div class="gallery-item">
+    <img src="ff.png" alt="NextGen Youth Camp">
+    <h3>Next_Gen 2024</h3>
+</div>
+<div class="gallery-item">
+    <img src="out.jpeg" alt="NextGen Youth Camp">
+    <h3>Worship Team 2024</h3>
+</div>
+<div class="gallery-item">
+    <img src="group 2.jpeg" alt="NextGen Youth Camp">
+    <h3>Next_Gen 2023</h3>
+</div>
+<div class="gallery-item">
+    <img src="Worship Team.jpeg" alt="NextGen Youth Camp">
+    <h3>Next_Gen ft.Samir Diyali</h3>
 </div>
 </div>
 </section>
@@ -2121,25 +2441,101 @@ flex-wrap:wrap;
 <p>Called by Christ. Built by His Word. Sent with a purpose.</p>
 </div>
 <div class="footer-links">
-<a href="#home" id="home">Home </a>
-<a href="#about " id="about">About</a>
-<a href="#leaders" id="leaders">Leaders</a>
-<a href="#ministries" id="ministries">Ministries</a>
-<a href="#events" id="events">Events</a>
-<a href="#outreach" id="outreach">Outreach</a>
-<a href="#gallery" id="gallery">Gallery</a>
-<a href="#join" id="join">Join Us</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#leaders">Leaders</a>
+<a href="#events">Events</a>
+<a href="#outreach">Outreach</a>
+<a href="#gallery">Gallery</a>
+<a href="#join">Join Us</a>
 </div>
 <div class="footer-bottom">
 <p>© 2021 Next_Gen in Christ. All rights reserved.</p>
 <p>Made for the next generation.</p>
 </div>
 </footer>
+
+
+
+
 <!-- JAVASCRIPT -->
- <script>
-function toggleMenu(){
-document.querySelector(".nav-links").classList.toggle("active");
+<script>
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+function setMenuState() {
+    const isMobile = window.innerWidth <= 900;
+    menuBtn.style.display = isMobile ? 'block' : 'none';
+    if (!isMobile) {
+        navLinks.classList.remove('active');
+        navLinks.style.display = 'flex';
+    } else {
+        navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+    }
 }
+
+function toggleMenu() {
+    if (window.innerWidth > 900) return;
+    navLinks.classList.toggle('active');
+    navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+}
+
+window.addEventListener('resize', setMenuState);
+setMenuState();
+
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 900) {
+            navLinks.classList.remove('active');
+            navLinks.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<!-- EVENT DATE SCRIPT -->
+<script>
+function getLastSunday(year, month) {
+    let date = new Date(year, month + 1, 0);
+    while (date.getDay() !== 0) {
+        date.setDate(date.getDate() - 1);
+    }
+    return date;
+}
+
+function getNextEventDate() {
+
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+
+    let eventDate = getLastSunday(year, month);
+
+    if (today > eventDate) {
+        month++;
+
+        if (month > 11) {
+            month = 0;
+            year++;
+        }
+
+        eventDate = getLastSunday(year, month);
+    }
+
+    let day = eventDate.getDate();
+
+    let months = [
+        "JANUARY", "FEBRUARY", "MARCH",
+        "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER",
+        "OCTOBER", "NOVEMBER", "DECEMBER"
+    ];
+
+    document.getElementById("event-date").textContent =
+        day + "TH OF " + months[eventDate.getMonth()] + " " + year;
+}
+getNextEventDate();
+
 </script>
 
 </body>
