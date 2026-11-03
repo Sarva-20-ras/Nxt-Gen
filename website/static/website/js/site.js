@@ -1,0 +1,72 @@
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+function setMenuState() {
+    const isMobile = window.innerWidth <= 900;
+    menuBtn.style.display = isMobile ? 'block' : 'none';
+    if (!isMobile) {
+        navLinks.classList.remove('active');
+        navLinks.style.display = 'flex';
+    } else {
+        navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+    }
+}
+
+function toggleMenu() {
+    if (window.innerWidth > 900) return;
+    navLinks.classList.toggle('active');
+    navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+}
+
+window.addEventListener('resize', setMenuState);
+setMenuState();
+
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 900) {
+            navLinks.classList.remove('active');
+            navLinks.style.display = 'none';
+        }
+    });
+});
+
+function getLastSunday(year, month) {
+    let date = new Date(year, month + 1, 0);
+    while (date.getDay() !== 0) {
+        date.setDate(date.getDate() - 1);
+    }
+    return date;
+}
+
+function getNextEventDate() {
+
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+
+    let eventDate = getLastSunday(year, month);
+
+    if (today > eventDate) {
+        month++;
+
+        if (month > 11) {
+            month = 0;
+            year++;
+        }
+
+        eventDate = getLastSunday(year, month);
+    }
+
+    let day = eventDate.getDate();
+
+    let months = [
+        "JANUARY", "FEBRUARY", "MARCH",
+        "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER",
+        "OCTOBER", "NOVEMBER", "DECEMBER"
+    ];
+
+    document.getElementById("event-date").textContent =
+        day + "TH OF " + months[eventDate.getMonth()] + " " + year;
+}
+getNextEventDate();

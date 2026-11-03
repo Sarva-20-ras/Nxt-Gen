@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NextGen in Christ is a Christian youth community in Siliguri focused on worship, Bible teaching, fellowship, outreach and helping young people grow in Christ.">
+    <meta name="keywords" content="Christian youth group Siliguri, youth ministry Siliguri, Christian youth ministry, NextGen in Christ, church youth Siliguri">
+    <meta name="author" content="NextGen in Christ">
+    <meta name="robots" content="index, follow">
+    <title>{% block title %}Next_Gen in Christ{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'website/css/site.css' %}">
+    <script src="{% static 'website/js/site.js' %}" defer></script>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
