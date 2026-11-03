@@ -39,8 +39,8 @@ function getLastSunday(year, month) {
 }
 
 function getNextEventDate() {
-
-    let today = new Date();
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     let year = today.getFullYear();
     let month = today.getMonth();
 
@@ -58,6 +58,9 @@ function getNextEventDate() {
     }
 
     let day = eventDate.getDate();
+    let suffix = day % 100 >= 11 && day % 100 <= 13
+        ? "TH"
+        : ["TH", "ST", "ND", "RD"][day % 10] || "TH";
 
     let months = [
         "JANUARY", "FEBRUARY", "MARCH",
@@ -67,6 +70,24 @@ function getNextEventDate() {
     ];
 
     document.getElementById("event-date").textContent =
-        day + "TH OF " + months[eventDate.getMonth()] + " " + year;
+        day + suffix + " OF " + months[eventDate.getMonth()] + " " + year;
 }
+
+function scheduleEventDateUpdate() {
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+
+    window.setTimeout(function() {
+        getNextEventDate();
+        scheduleEventDateUpdate();
+    }, tomorrow - now);
+}
+
+document.addEventListener("visibilitychange", function() {
+    if (!document.hidden) {
+        getNextEventDate();
+    }
+});
+
 getNextEventDate();
+scheduleEventDateUpdate();
