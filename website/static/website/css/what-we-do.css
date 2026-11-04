@@ -1,0 +1,97 @@
+/* =========================
+   WHAT WE DO
+========================= */
+.what-we-do {
+    padding: 120px 60px;
+    background-color: #0f172a;
+}
+/* SECTION TITLE */
+.section-title {
+    margin-bottom: 60px;
+}
+.section-title p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+.section-title h2 {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 800;
+}
+/* =========================
+   CARDS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+/* INDIVIDUAL CARD */
+.card {
+    min-height: 300px;
+    padding: 30px;
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+/* CARD NUMBER */
+.card-number {
+    font-size: 14px;
+    color: #64748b;
+}
+/* CARD TITLE */
+.card h3 {
+    font-size: 28px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+/* CARD DESCRIPTION */
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #475569;
+}
+.card img{
+width:100%;
+height:100%;
+
+object-fit:contain;
+display:block;
+transition:
+transform 0.6s ease,
+filter 0.6s ease;
+}
+.card::after{
+content:"";
+
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:
+linear-gradient(
+to bottom,
+transparent 45%,
+rgba(2,6,23,0.25) 60%,
+rgba(2,6,23,0.95) 100%
+);
+
+pointer-events:none;
+}
+
+.team-card:hover img{
+transform:scale(1.06);
+}

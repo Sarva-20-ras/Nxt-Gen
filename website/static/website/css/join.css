@@ -1,0 +1,56 @@
+/* =========================
+JOIN SECTION
+========================= */
+.join{
+padding:140px 60px;
+background-color:#e2e8f0;
+color:#0f172a;
+text-align:center;
+}
+.join-content{
+max-width:850px;
+margin:0 auto;
+}
+.join-content>p:first-child{
+font-size:13px;
+letter-spacing:3px;
+color:#475569;
+margin-bottom:25px;
+}
+.join h2{
+font-size:72px;
+line-height:1;
+font-weight:800;
+margin-bottom:30px;
+}
+.join-content>p{
+max-width:650px;
+margin:0 auto 40px;
+font-size:18px;
+line-height:1.7;
+color:#475569;
+}
+.join-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+}
+.join-button{
+padding:15px 25px;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.join-button.primary{
+background-color:#0f172a;
+color:white;
+}
+.join-button.secondary{
+border:1px solid #94a3b8;
+color:#0f172a;
+}
+.join-button:hover{
+transform:translateY(-3px);
+}

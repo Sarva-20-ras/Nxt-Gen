@@ -1,0 +1,457 @@
+/* =====================================================
+  all MOBILE RESPONSIVE
+   Screens: 600px and below
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* =========================
+       NAVBAR — MOBILE
+    ========================= */
+
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav div {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    /* =========================
+       HERO — MOBILE
+    ========================= */
+
+    .hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 70px 20px;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-color: #1e293b;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.5;
+        right: -150px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .hero-text {
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-text p:first-child {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: #94a3b8;
+        margin-bottom: 25px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #334155;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: 1;
+        margin-bottom: 30px;
+        font-weight: 800;
+        letter-spacing: -2px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #cbd5e1;
+        margin-bottom: 35px;
+    }
+
+    .hero button {
+        padding: 16px 30px;
+        border: none;
+        border-radius: 8px;
+        background-color: white;
+        color: #0f172a;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hero button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(255,255,255,0.12);
+    }
+
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        padding: 40px 0;
+    }
+
+    .hero-image::before {
+        width: 380px;
+        height: 380px;
+        background-color: #334155;
+        filter: blur(90px);
+        opacity: 0.6;
+    }
+
+    .hero-image img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+
+    /* =========================
+       ABOUT — MOBILE
+    ========================= */
+
+    .about {
+        padding: 80px 20px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-heading {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .about-heading h2 {
+        font-size: 36px;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    /* STORY — MOBILE */
+
+.story {
+    padding: 80px 25px;
+    display: block;
+}
+
+.story-heading {
+    margin-bottom: 55px;
+}
+
+.story-heading > p {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.story-heading h2 {
+    font-size: 38px;
+    line-height: 1.05;
+    margin-bottom: 40px;
+}
+
+.story-verse {
+    padding-left: 18px;
+}
+
+.story-verse p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.story-content > p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.story-divider {
+    margin: 45px 0;
+}
+
+.story-content h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+    /* =========================
+       WHAT WE DO — MOBILE
+    ========================= */
+
+    .what-we-do {
+        padding: 80px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 44px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 320px;
+        padding: 30px;
+    }
+
+    .card h3 {
+        font-size: 30px;
+    }
+
+
+    /* =========================
+       EVENTS — MOBILE
+    ========================= */
+
+    .events {
+        padding: 80px 20px;
+    }
+
+    .events-header h2 {
+        font-size: 44px;
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-info {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .event-card h3 {
+        font-size: 44px;
+    }
+
+    .event-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-side {
+        width: 100%;
+        min-height: 180px;
+    }
+
+
+    /* =========================
+       OUTREACH — MOBILE
+    ========================= */
+
+    .outreach {
+        padding: 90px 20px;
+    }
+
+    .outreach-top h2 {
+        font-size: 44px;
+    }
+
+    .outreach-content {
+        margin-top: 60px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .outreach-text h3 {
+        font-size: 26px;
+    }
+
+    .outreach-text p {
+        font-size: 16px;
+    }
+
+    .outreach-bottom {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+
+    /* =========================
+       GALLERY — MOBILE
+    ========================= */
+
+    .gallery {
+        padding: 80px 20px;
+    }
+
+    .gallery-header h2 {
+        font-size: 44px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: auto;
+    }
+
+
+    /* =========================
+       JOIN — MOBILE
+    ========================= */
+
+    .join {
+        padding: 90px 20px;
+    }
+
+    .join h2 {
+        font-size: 44px;
+    }
+
+    .join-content > p {
+        font-size: 16px;
+    }
+
+    .join-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .join-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+
+    /* =========================
+       LEADERS — MOBILE
+    ========================= */
+
+    .leaders {
+        padding: 80px 20px;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .leaders-image {
+        height: 450px;
+    }
+
+    .leaders-content h2 {
+        font-size: 44px;
+    }
+
+
+    /* =========================
+       TEAM — MOBILE
+    ========================= */
+
+.team{
+padding:80px 20px;
+overflow:hidden;
+}
+.team-track{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:50px;
+overflow-x:auto;
+padding:20px 5px 30px;
+}
+.team-card{
+min-width:260px;
+width:260px;
+height:300px;
+flex-shrink:0;
+margin:0;
+}
+.team-header{
+flex-direction:column;
+align-items:flex-start;
+gap:30px;
+}
+.team-header h2{
+font-size:44px;
+}
+
+
+
+    /* =========================
+       FOOTER — MOBILE
+    ========================= */
+
+    footer {
+        padding: 60px 20px 25px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+/*navbar css for mobile and all*/
+nav .menu-btn {
+    display: none;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    nav {
+        padding: 20px 30px;
+        flex-wrap: wrap;
+    }
+
+    nav .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+}
+
+@media (min-width: 901px) {
+    nav .menu-btn {
+        display: none !important;
+    }
+}

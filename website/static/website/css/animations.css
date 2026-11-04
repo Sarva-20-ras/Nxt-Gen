@@ -1,0 +1,39 @@
+/*animation*/
+.hero-text{
+animation:fadeUp 1s ease forwards;
+}
+.hero-image{
+animation:fadeIn 1.2s ease forwards;
+}
+.card{
+animation:fadeUp 0.8s ease forwards;
+}
+.event-card{
+animation:fadeUp 0.8s ease forwards;
+}
+.gallery-item{
+animation:fadeUp 0.8s ease forwards;
+}
+.join-content{
+animation:fadeUp 0.8s ease forwards;
+}
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(0.95);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}

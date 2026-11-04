@@ -1,0 +1,143 @@
+/* =========================
+EVENTS
+========================= */
+.events{
+padding:120px 60px;
+background-color:#111827;
+}
+.events-header{
+margin-bottom:60px;
+}
+.events-header p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.events-header h2{
+font-size:56px;
+line-height:1;
+font-weight:800;
+}
+.event-card{
+display:flex;
+justify-content:space-between;
+min-height:500px;
+border:1px solid #1e293b;
+border-radius:20px;
+overflow:hidden;
+background-color:#0f172a;
+}
+.event-info{
+width:65%;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.event-tag{
+font-size:12px;
+letter-spacing:2px;
+color:#94a3b8;
+margin-bottom:25px;
+}
+.event-card h3{
+font-size:64px;
+line-height:.95;
+letter-spacing:-2px;
+margin-bottom:25px;
+}
+.event-card p{
+max-width:550px;
+font-size:17px;
+line-height:1.7;
+color:#cbd5e1;
+margin-bottom:40px;
+}
+.event-details{
+display:flex;
+gap:60px;
+margin-bottom:40px;
+}
+.event-details div{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+.event-details span{
+font-size:11px;
+letter-spacing:2px;
+color:#64748b;
+}
+.event-details strong{
+font-size:14px;
+}
+.event-button{
+display:inline-block;
+width:max-content;
+padding:14px 22px;
+background-color:white;
+color:#0f172a;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.event-button:hover{
+transform:translateY(-3px);
+}
+
+/* ADDED: GATHER CARD IMAGE AREA - controls the panel containing 01 */
+.event-side{
+width:35%;
+display:flex;
+align-items:flex-end;
+justify-content:flex-end;
+padding:40px;
+position:relative;
+overflow:hidden;
+background-color:#1e293b;
+background-size:cover;
+background-position:center;
+}
+.event-side::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(2,6,23,0.45);
+}
+.event-side span{
+font-size:100px;
+font-weight:800;
+color:white;
+position:relative;
+z-index:1;
+text-shadow:0 3px 12px rgba(0,0,0,0.5);
+}
+
+/* EVENT IMAGES - give each event card its own image */
+.event-card.event-one .event-side{
+background-image:url('../images/Service1.png');
+}
+
+.event-card.event-two .event-side{
+background-image:none;
+}
+
+/* EVENT TYPOGRAPHY - customize each event card independently */
+.event-card.event-one .event-tag{
+font-size:12px;
+}
+
+.event-card.event-one .event-info > p{
+font-size:17px;
+}
+
+.event-card.event-two .event-tag{
+font-size:14px;
+}
+
+.event-card.event-two .event-info > p{
+font-size:20px;
+}

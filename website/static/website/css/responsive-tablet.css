@@ -1,0 +1,176 @@
+/* =====================================================
+   all TABLET RESPONSIVE
+   Screens: 601px - 900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+    /* =========================
+       NAVBAR — TABLET
+    ========================= */
+
+    nav {
+        padding: 20px 30px;
+    }
+
+    nav div {
+        gap: 18px;
+    }
+
+
+    /* =========================
+       HERO — TABLET
+    ========================= */
+
+    .hero {
+        padding: 60px 30px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        letter-spacing: -1px;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+
+    /* =========================
+       ABOUT — TABLET
+    ========================= */
+
+    .about {
+        padding: 90px 30px;
+        gap: 40px;
+    }
+
+    .about-heading h2 {
+        font-size: 40px;
+    }
+
+/* STORY — TABLET */
+
+.story {
+    padding: 90px 40px;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.story-heading {
+    position: static;
+}
+
+.story-heading h2 {
+    font-size: 48px;
+}
+
+.story-verse {
+    max-width: 600px;
+}
+
+.story-content {
+    max-width: 100%;
+}
+
+.story-content > p {
+    font-size: 17px;
+}
+    /* =========================
+       WHAT WE DO — TABLET
+    ========================= */
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       EVENTS — TABLET
+    ========================= */
+
+    .events {
+        padding: 90px 30px;
+    }
+
+    .event-card h3 {
+        font-size: 50px;
+    }
+
+    .event-info {
+        padding: 40px;
+    }
+
+
+    /* =========================
+       OUTREACH — TABLET
+    ========================= */
+
+    .outreach {
+        padding: 100px 30px;
+    }
+
+    .outreach-top h2 {
+        font-size: 56px;
+    }
+
+
+    /* =========================
+       GALLERY — TABLET
+    ========================= */
+
+    .gallery {
+        padding: 90px 30px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       JOIN — TABLET
+    ========================= */
+
+    .join {
+        padding: 100px 30px;
+    }
+
+    .join h2 {
+        font-size: 56px;
+    }
+
+
+    /* =========================
+       LEADERS — TABLET
+    ========================= */
+
+    .leaders {
+        padding: 90px 30px;
+        gap: 50px;
+    }
+
+
+    /* =========================
+       TEAM — TABLET
+    ========================= */
+
+    .team {
+        padding: 90px 30px;
+    }
+
+    .team-header h2 {
+        font-size: 52px;
+    }
+
+
+    /* =========================
+       FOOTER — TABLET
+    ========================= */
+
+    footer {
+        padding: 60px 30px 25px;
+    }
+
+}

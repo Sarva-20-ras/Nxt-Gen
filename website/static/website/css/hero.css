@@ -1,0 +1,95 @@
+    /* NAVBAR */  /* HERO */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+/* HERO TEXT */
+.hero-text {
+    max-width: 750px;
+}
+
+/* SMALL INTRO TEXT */
+.hero-text p:first-child {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* MAIN HEADING */
+.hero h1 {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+/* DESCRIPTION */
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   LOGO AREA
+========================= */
+
+.hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 100px 60px;
+}
+
+
+/* GLOW BEHIND LOGO */
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: #e1f6f4;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+    z-index: 0;
+}
+/* LOGO */
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+
+/* LOGO HOVER */
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+.hero button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+}

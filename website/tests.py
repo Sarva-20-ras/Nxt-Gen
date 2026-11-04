@@ -29,7 +29,39 @@ class HomePageTests(TestCase):
     def test_homepage_uses_django_static_assets(self):
         response = self.client.get("/")
 
-        self.assertContains(response, "/static/website/css/site.css")
+        stylesheets = (
+            "base.css",
+            "hero.css",
+            "navbar.css",
+            "about.css",
+            "story.css",
+            "what-we-do.css",
+            "events.css",
+            "outreach.css",
+            "gallery.css",
+            "join.css",
+            "footer.css",
+            "animations.css",
+            "leaders.css",
+            "team.css",
+            "responsive-tablet.css",
+            "responsive-mobile.css",
+        )
+        rendered_stylesheets = re.findall(
+            r'<link rel="stylesheet" href="([^"]+)"',
+            response.content.decode(),
+        )
+        self.assertEqual(
+            rendered_stylesheets,
+            [f"/static/website/css/{stylesheet}" for stylesheet in stylesheets],
+        )
+
+        for stylesheet in stylesheets:
+            path = f"website/css/{stylesheet}"
+            with self.subTest(stylesheet=stylesheet):
+                self.assertContains(response, f"/static/{path}")
+                self.assertIsNotNone(finders.find(path), f"Missing stylesheet: {path}")
+
         self.assertContains(response, "/static/website/js/site.js")
         self.assertContains(response, "/static/website/images/logo1.png")
 

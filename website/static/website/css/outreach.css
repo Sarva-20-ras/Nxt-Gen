@@ -1,0 +1,92 @@
+/* =========================
+OUTREACH
+========================= */
+.outreach{
+padding:140px 60px;
+background-color:#0f172a;
+}
+.outreach-top{
+max-width:900px;
+}
+.outreach-top p{
+font-size:13px;
+letter-spacing:3px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+.outreach-top h2{
+font-size:72px;
+line-height:1;
+font-weight:800;
+}
+.outreach-content{
+margin-top:100px;
+padding:50px 0;
+border-top:1px solid #1e293b;
+border-bottom:1px solid #1e293b;
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:60px;
+}
+
+/* ADDED: OUTREACH IMAGE AREA - controls the left panel containing 01 */
+.outreach-number{
+font-size:18px;
+color:white;
+min-height:240px;
+padding:30px;
+display:flex;
+align-items:flex-end;
+position:relative;
+overflow:hidden;
+background-image:url('../images/out.jpeg');
+background-size:cover;
+background-position:center;
+}
+.outreach-number::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(2,6,23,0.45);
+}
+.outreach-number span{
+position:relative;
+z-index:1;
+text-shadow:0 3px 12px rgba(0,0,0,0.5);
+}
+.outreach-text{
+max-width:700px;
+}
+.outreach-text h3{
+font-size:32px;
+margin-bottom:20px;
+}
+.outreach-text p{
+font-size:18px;
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+.outreach-button{
+display:inline-block;
+padding:14px 22px;
+border:1px solid #475569;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+.outreach-button:hover{
+background-color:white;
+color:#0f172a;
+}
+.outreach-bottom{
+display:flex;
+justify-content:space-between;
+margin-top:60px;
+font-size:14px;
+letter-spacing:3px;
+color:#64748b;
+}

@@ -45,7 +45,11 @@ and paste its output into the Vercel environment variable. Do not commit the key
 ```text
 config/                         Django settings, URLs, and WSGI entrypoint
 website/
-  static/website/css/           Page styles
+  static/website/css/
+    base.css, hero.css, navbar.css, about.css, story.css, what-we-do.css
+    events.css, outreach.css, gallery.css, join.css, footer.css
+    animations.css, leaders.css, team.css
+    responsive-tablet.css, responsive-mobile.css
   static/website/js/            Navigation and event-date behavior
   static/website/images/        Page images
   templates/website/
