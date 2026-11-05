@@ -19,25 +19,6 @@
 
 
     /* =========================
-       HERO — TABLET
-    ========================= */
-
-    .hero {
-        padding: 60px 30px;
-        gap: 40px;
-    }
-
-    .hero h1 {
-        font-size: 44px;
-        letter-spacing: -1px;
-    }
-
-    .hero-image img {
-        max-width: 350px;
-    }
-
-
-    /* =========================
        ABOUT — TABLET
     ========================= */
 
