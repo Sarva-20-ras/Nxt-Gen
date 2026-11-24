@@ -31,6 +31,40 @@
     pointer-events: none;
 }
 
+.hero::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 40px 60px, rgba(225, 246, 244, 0.78) 50%, transparent 55%),
+        radial-gradient(1.5px 1.5px at 130px 160px, rgba(255, 255, 255, 0.66) 50%, transparent 55%),
+        radial-gradient(1px 1px at 250px 90px, rgba(225, 246, 244, 0.58) 50%, transparent 55%);
+    background-size: 320px 260px;
+    content: "";
+    opacity: 0.38;
+    pointer-events: none;
+    animation: hero-snowfall 28s linear infinite;
+}
+
+.holiday-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+    padding: 9px 13px;
+    border: 1px solid rgba(225, 246, 244, 0.26);
+    border-radius: 999px;
+    background: rgba(225, 246, 244, 0.05);
+    color: #e1f6f4;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+}
+
+.holiday-note span:first-child {
+    font-size: 15px;
+}
+
 .hero-text {
     position: relative;
     z-index: 1;
@@ -107,6 +141,16 @@
     content: "";
 }
 
+.hero-image::after {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    color: rgba(225, 246, 244, 0.84);
+    content: "✧";
+    font-size: clamp(28px, 4vw, 48px);
+    animation: holiday-twinkle 3s ease-in-out infinite;
+}
+
 .hero-image img {
     display: block;
     width: 100%;
@@ -178,6 +222,11 @@
         letter-spacing: 0.16em;
     }
 
+    .holiday-note {
+        margin-bottom: 18px;
+        font-size: 9px;
+    }
+
     .hero h1 {
         margin-bottom: 20px;
         font-size: clamp(38px, 11vw, 60px);
@@ -213,11 +262,34 @@
         width: min(70vw, 280px);
         filter: blur(64px);
     }
+
+    .hero-image::after {
+        top: 10%;
+        right: 2%;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .hero::before,
+    .hero-image::after {
+        animation: none;
+    }
+
     .hero button,
     .hero-image img {
         transition: none;
+    }
+}
+
+@keyframes hero-snowfall {
+    to {
+        background-position: 0 260px;
+    }
+}
+
+@keyframes holiday-twinkle {
+    50% {
+        opacity: 0.45;
+        transform: scale(0.82) rotate(12deg);
     }
 }

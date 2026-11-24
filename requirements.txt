@@ -1,1 +1,6 @@
 Django>=5.2,<6.2
+cloudinary>=1.44,<2
+dj-database-url>=2.2,<3
+django-cloudinary-storage>=0.3,<0.4
+Pillow>=11,<13
+psycopg[binary]>=3.2,<4

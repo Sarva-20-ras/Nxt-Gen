@@ -1,50 +1,38 @@
 {% load static %}
-<!-- GALLERY SECTION -->
 <section class="gallery" id="gallery">
-<div class="gallery-header">
-<p>OUR MOMENTS</p>
-<h2>THE JOURNEY<br>SO FAR.</h2>
-</div>
-<div class="gallery-grid">
-<div class="gallery-item">
-<img src="{% static 'website/images/w2.jpeg' %}" alt="NextGen Youth Camp">
-<h3>Worship Team 2026</h3>
-</div>
-<div class="gallery-item">
-<img src="{% static 'website/images/group1.jpeg' %}" alt="NextGen Youth Camp">
-<h3>Next_Gen 2026</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/gp.JPG' %}" alt="NextGen Youth Camp">
-    <h3>Next_Gen 2025</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/rajat.JPG' %}" alt="NextGen Youth Camp">
-    <h3>Next_Gen 2025 ft. <br> Rajat bk. & Team </h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/wor2.JPG' %}" alt="NextGen Youth Camp">
-    <h3>Worship Team A 2025</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/wor1.JPG' %}" alt="NextGen Youth Camp">
-    <h3>Worship Team B 2025</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/ff.png' %}" alt="NextGen Youth Camp">
-    <h3>Next_Gen 2024</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/out.jpeg' %}" alt="NextGen Youth Camp">
-    <h3>Worship Team 2024</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/group 2.jpeg' %}" alt="NextGen Youth Camp">
-    <h3>Next_Gen 2023</h3>
-</div>
-<div class="gallery-item">
-    <img src="{% static 'website/images/Worship Team.jpeg' %}" alt="NextGen Youth Camp">
-    <h3>Next_Gen ft.Samir Tiruwa</h3>
-</div>
-</div>
+    <div class="gallery-header">
+        <div>
+            <p><span class="holiday-hat-letter">O<span class="holiday-hat" aria-hidden="true"></span></span>UR MOMENTS</p>
+            <h2>THE JOURNEY<br>SO FAR.</h2>
+        </div>
+        <p class="gallery-intro">
+            {% if full_page %}
+                Browse moments of worship, fellowship, and serving together.
+            {% else %}
+                Snapshots of worship, fellowship, and serving together.
+            {% endif %}
+        </p>
+    </div>
+    <div class="gallery-grid">
+        {% for photo in gallery_photos %}
+            <article class="gallery-item">
+                {% if photo.image %}
+                    <img src="{{ photo.image.url }}" alt="{{ photo.alt_text }}" loading="lazy">
+                {% elif photo.legacy_image_path %}
+                    <img src="{% static photo.legacy_image_path %}" alt="{{ photo.alt_text }}" loading="lazy">
+                {% else %}
+                    <div class="gallery-placeholder" aria-hidden="true">NEXT_GEN</div>
+                {% endif %}
+                <div class="gallery-caption">
+                    <h3>{{ photo.caption }}</h3>
+                </div>
+            </article>
+        {% empty %}
+            <p class="empty-state">New moments will be shared here soon.</p>
+        {% endfor %}
+    </div>
+    {% if not full_page %}
+        <a class="section-link" href="{% url 'website:gallery' %}">Explore the full gallery <span aria-hidden="true">→</span></a>
+    {% endif %}
+    <span class="holiday-snowman holiday-snowman--gallery" aria-hidden="true">⛄</span>
 </section>

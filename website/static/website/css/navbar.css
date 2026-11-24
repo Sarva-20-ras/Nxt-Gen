@@ -1,63 +1,287 @@
-/*navbar*/
-   nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 60px;
-border-bottom:1px solid #1e293b;
-position:sticky;
-top:0;
-z-index:1000;
-background-color:#0f172a;
-}
-nav h2{
-font-size:22px;
-font-weight:bold;
-}
-nav div{
-display:flex;
-gap:30px;
-align-items:center;
-}
-nav a{
-color:#cbd5e1;
-text-decoration:none;
-font-size:15px;
-font-weight:500;
-transition:0.3s;
-position:relative;
-}
-nav a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-6px;
-width:0;
-height:2px;
-background-color:white;
-transition:0.3s;
-}
-nav a:hover{
-color:white;
-}
-nav a:hover::after{
-width:100%;
-}
-
-
-/* NAVBAR BRANDING */
-nav h2.brand {
+.site-nav {
+    position: sticky;
+    isolation: isolate;
+    top: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #eceff1;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px clamp(20px, 5vw, 72px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(18px);
 }
 
-nav h2.brand img {
-    width: 38px;
-    height: 38px;
-    object-fit: contain;
+.holiday-garland {
+    display: none;
+}
+
+html.holiday-decorations .holiday-garland {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    display: block;
+    width: 70%;
+    height: 24px;
+    pointer-events: none;
+}
+
+html.holiday-decorations .holiday-garland::before {
+    position: absolute;
+    inset: 0 0 3px;
+    border-bottom: 2px solid #228044;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    content: "";
+}
+
+html.holiday-decorations .holiday-garland::after {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 8% 55%, #ef4444 0 2px, transparent 2.7px),
+        radial-gradient(circle at 22% 82%, #facc15 0 2px, transparent 2.7px),
+        radial-gradient(circle at 36% 96%, #f8fafc 0 2px, transparent 2.7px),
+        radial-gradient(circle at 50% 100%, #ef4444 0 2px, transparent 2.7px),
+        radial-gradient(circle at 64% 96%, #facc15 0 2px, transparent 2.7px),
+        radial-gradient(circle at 78% 82%, #f8fafc 0 2px, transparent 2.7px),
+        radial-gradient(circle at 92% 55%, #ef4444 0 2px, transparent 2.7px);
+    content: "";
+}
+
+.holiday-hat-letter {
+    position: relative;
+    display: inline-block;
+}
+
+.holiday-hat {
+    display: none;
+}
+
+html.holiday-decorations .holiday-hat {
+    display: block;
+    position: absolute;
+    top: -0.62em;
+    left: -0.08em;
+    width: 1em;
+    height: 0.75em;
+    font-size: clamp(8px, 0.34em, 18px);
+    transform: rotate(-15deg);
+    background: radial-gradient(circle at 76% 10%, #fff 0 0.14em, transparent 0.17em);
+}
+
+html.holiday-decorations .holiday-hat::before {
+    position: absolute;
+    inset: 20% 5% 25% 15%;
+    background: #dc2626;
+    clip-path: polygon(0 100%, 100% 100%, 75% 0);
+    content: "";
+}
+
+html.holiday-decorations .holiday-hat::after {
+    position: absolute;
+    right: 0;
+    bottom: 12%;
+    left: 8%;
+    height: 18%;
+    border-radius: 999px;
+    background: #fff;
+    content: "";
+}
+
+.holiday-snowman {
+    display: none;
+}
+
+html.holiday-decorations .holiday-snowman {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    filter: drop-shadow(0 2px 4px rgba(2, 6, 23, 0.3));
+}
+
+.hero,
+.about,
+.events,
+.gallery,
+.holiday-footer {
+    position: relative;
+}
+
+.holiday-snowman--hero {
+    right: 4%;
+    bottom: 8%;
+}
+
+.holiday-snowman--about {
+    right: 3%;
+    bottom: 12%;
+}
+
+.holiday-snowman--story {
+    right: 3%;
+    bottom: 8%;
+}
+
+.holiday-snowman--events {
+    top: 8%;
+    right: 3%;
+}
+
+.holiday-snowman--gallery {
+    top: 9%;
+    right: 3%;
+}
+
+.holiday-snowman--footer {
+    top: 22%;
+    right: 5%;
+}
+
+.site-nav .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: #f8fafc;
+    font-size: 17px;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav .brand img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: contain;
+}
+
+.site-nav .brand-initial {
+    position: relative;
+}
+
+.site-nav .brand-hat {
+    display: none;
+}
+
+html.holiday-decorations .site-nav .brand-hat {
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: -4px;
+    width: 15px;
+    height: 13px;
+    transform: rotate(-15deg);
+    background: radial-gradient(circle at 76% 2px, #fff 0 3px, transparent 3.5px);
+}
+
+.site-nav .brand-hat::before {
+    position: absolute;
+    inset: 3px 1px 3px 2px;
+    background: #dc2626;
+    clip-path: polygon(0 100%, 100% 100%, 75% 0);
+    content: "";
+}
+
+.site-nav .brand-hat::after {
+    position: absolute;
+    right: 0px;
+    bottom: 1px;
+    left: 1px;
+    height: 3px;
+    border-radius: 999px;
+    background: #fff;
+    content: "";
+}
+
+.christmas-snow {
+    position: fixed;
+    z-index: 1100;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.site-nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2vw, 28px);
+}
+
+.site-nav .nav-links a {
+    position: relative;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a:focus-visible {
+    color: var(--color-accent);
+}
+
+.site-nav .nav-links .nav-cta {
+    padding: 11px 17px;
+    border: 1px solid rgba(225, 246, 244, 0.38);
+    border-radius: 999px;
+    color: #f8fafc;
+}
+
+.site-nav .menu-btn {
+    display: none;
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 8px 11px;
+    background: var(--color-surface-raised);
+    color: #f8fafc;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .site-nav {
+        flex-wrap: wrap;
+        padding: 13px 22px;
+    }
+
+    .site-nav .menu-btn {
+        display: block;
+    }
+
+    .site-nav .nav-links {
+        display: none;
+        flex-basis: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0 12px;
+    }
+
+    .site-nav .nav-links.active {
+        display: flex;
+    }
+
+    .site-nav .nav-links a {
+        padding: 12px 4px;
+    }
+
+    .site-nav .nav-links .nav-cta {
+        align-self: flex-start;
+        margin-top: 6px;
+        padding: 10px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-nav .nav-links a {
+        transition: none;
+    }
 }

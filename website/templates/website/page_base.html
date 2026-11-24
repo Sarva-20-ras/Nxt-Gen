@@ -1,0 +1,9 @@
+{% extends "website/base.html" %}
+
+{% block content %}
+    {% include "website/sections/navbar.html" %}
+    <main class="page-main">
+        {% block page_content %}{% endblock %}
+    </main>
+    {% include "website/sections/footer.html" %}
+{% endblock %}
