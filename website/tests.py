@@ -6,19 +6,15 @@ from django.test import TestCase
 
 
 class HomePageTests(TestCase):
-    def test_google_site_verification_file_is_available_at_site_root(self):
-        response = self.client.get("/googlea6c7eabbdc6922d8.html")
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(
-            response.content.decode(),
-            "google-site-verification: googlea6c7eabbdc6922d8.html",
-        )
-
     def test_homepage_renders_all_sections(self):
         response = self.client.get("/")
 
         self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            '<meta name="google-site-verification" '
+            'content="-OxL56_gDHXZqjhdZZ-WWSw-xcpxhEjF1wa_MlC8NZ0">',
+        )
         sections = (
             "home",
             "about",
