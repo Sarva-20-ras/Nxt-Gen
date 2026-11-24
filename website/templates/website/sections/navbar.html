@@ -1,18 +1,24 @@
 {% load static %}
-<!-- NAVBAR -->
-    <nav>
-       <h2 class="brand">
-    <img src="{% static 'website/images/logo1.png' %}" alt="NextGen Logo">
-    <span>Next_Gen in Christ</span>
-        </h2>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        <div class="nav-links">
-            <a href="#home"><b>Home</b></a>
-            <a href="#about"><b>About</b></a>
-            <a href="#leaders"><b>Our Leaders</b></a>
-            <a href="#team"><b>Team</b></a>
-            <a href="#events"><b>Events</b></a>
-            <a href="#outreach"><b>Outreach</b></a>
-            <a href="#join"><b>Join Us</b></a>
-        </div>
-    </nav>
+<nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="{% url 'website:home' %}" aria-label="NextGen in Christ home">
+        <img src="{% static 'website/images/logo1.png' %}" alt="">
+        <span>Next_Gen in Christ</span>
+    </a>
+    <button
+        class="menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        onclick="toggleMenu()"
+    >☰</button>
+    <div class="nav-links" id="primary-navigation">
+        <a href="{% url 'website:home' %}#home">Home</a>
+        <a href="{% url 'website:story' %}">Story</a>
+        <a href="{% url 'website:team' %}">Team</a>
+        <a href="{% url 'website:gallery' %}">Gallery</a>
+        <a href="{% url 'website:home' %}#about">About</a>
+        <a href="{% url 'website:home' %}#events">Events</a>
+        <a class="nav-cta" href="{% url 'website:home' %}#join">Join us</a>
+    </div>
+</nav>

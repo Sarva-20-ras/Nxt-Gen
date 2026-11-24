@@ -1,95 +1,79 @@
-<!-- STORY SECTION -->
 <section class="story" id="story">
-
     <div class="story-heading">
-
         <p>HOW WE CAME TO BE</p>
-
-        <h2>
-            CARRYING THE<br>
-            <span>BATON OF FAITH.</span>
-        </h2>
-
+        <h2>CARRYING THE<br><span>BATON OF FAITH.</span></h2>
         <div class="story-verse">
             <p>
-                "When all that generation had been gathered to their
-                fathers, another generation arose after them who did
-                not know the Lord nor the work which He had done
-                for Israel."
+                "When all that generation had been gathered to their fathers,
+                another generation arose after them who did not know the Lord
+                nor the work which He had done for Israel."
             </p>
-
             <span>Judges 2:10</span>
         </div>
-
     </div>
-
 
     <div class="story-content">
+        {% if preview %}
+            <p>
+                Post covid we were witnessing an alarming increase in youngsters
+                turning away from their faith. It wasn't a sudden change that
+                materialised overnight. But the world was creeping into our
+                churches subtly but surely.
+            </p>
+            <p>
+                God spoke to us from Judges 2:10. We prayed, followed His leading,
+                and the first youth camp came into being.
+            </p>
+            <a class="section-link" href="{% url 'website:story' %}">Read our full story <span aria-hidden="true">→</span></a>
+        {% else %}
+            <p>
+                Post covid we were witnessing an alarming increase in youngsters
+                turning away from their faith. It wasn't a sudden change that
+                materialised overnight. But the world was creeping into our
+                churches subtly but surely.
+            </p>
+            <p>
+                It seems our guards were down and our people were not prepared to
+                face the problems looming in the corner.
+            </p>
+            <p>
+                We noticed a huge generational gap in churches which meant a huge
+                gap in perspective, world views etc. Faith and belief systems
+                were being affected.
+            </p>
+            <p>
+                Issues relating to youths were rarely addressed. Their queries
+                went unnoticed... unanswered. They (youth) were expected to
+                know, to understand.
+            </p>
+            <p>
+                God clearly spoke to us from Judges 2:10, we prayed and followed
+                His leading and that is how the first youth camp came into being.
+            </p>
 
-        <p>
-            Post covid we were witnessing an alarming increase in
-            youngsters turning away from their faith. It wasn't a
-            sudden change that materialised overnight. But the world
-            was creeping into our churches subtly but surely.
-        </p>
+            <div class="story-divider"></div>
+            <h3>WHY WE EXIST</h3>
+            <p>
+                Youth Camp organised by Next Gen in Christ aims to help each
+                youngster to turn to Christ. To know God as He is. To be healed
+                mentally, spiritually and emotionally. To be rooted in His word,
+                uncompromised.
+            </p>
+            <p>
+                To be leaders, trained, ready and equipped to lead others to
+                Christ and to be strong pillars for growth and support in their
+                respective churches. To carry forward the baton of faith in
+                Christ to the upcoming generations.
+            </p>
 
-        <p>
-            It seems our guards were down and our people were not
-            prepared to face the problems looming in the corner.
-        </p>
-
-        <p>
-            We noticed a huge generational gap in churches which
-            meant a huge gap in perspective, world views etc.
-            Faith and belief systems were being affected.
-        </p>
-
-        <p>
-            Issues relating to youths were rarely addressed.
-            Their queries went unnoticed... unanswered.
-            They (youth) were expected to know, to understand.
-        </p>
-
-        <p>
-            God clearly spoke to us from Judges 2:10, we prayed
-            and followed His leading and that is how the first
-            youth camp came into being.
-        </p>
-
-
-        <div class="story-divider"></div>
-
-
-        <h3>WHY WE EXIST</h3>
-
-        <p>
-            Youth Camp organised by Next Gen in Christ aims to help
-            each youngster to turn to Christ. To know God as He is.
-            To be healed mentally, spiritually and emotionally.
-            To be rooted in His word, uncompromised.
-        </p>
-
-        <p>
-            To be leaders, trained, ready and equipped to lead
-            others to Christ and to be strong pillars for growth
-            and support in their respective churches. To carry
-            forward the baton of faith in Christ to the upcoming
-            generations.
-        </p>
-
-
-        <div class="story-divider"></div>
-
-
-        <h3>THE GENERATION WE'RE BUILDING</h3>
-
-        <p>
-            Next Gen in Christ is a community of Christ centered
-            youngsters, who are carrying the Faith baton forward,
-            influencing their peers in their neighbourhood, schools,
-            colleges and basically wherever they go.
-        </p>
-
+            <div class="story-divider"></div>
+            <h3>THE GENERATION WE'RE BUILDING</h3>
+            <p>
+                Next Gen in Christ is a community of Christ centered youngsters,
+                who are carrying the Faith baton forward, influencing their peers
+                in their neighbourhood, schools, colleges and basically wherever
+                they go.
+            </p>
+        {% endif %}
     </div>
-
 </section>

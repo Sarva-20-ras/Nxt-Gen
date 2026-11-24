@@ -1,6 +1,12 @@
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
+function updateMenuButton(isOpen) {
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    menuBtn.textContent = isOpen ? '×' : '☰';
+}
+
 function setMenuState() {
     const isMobile = window.innerWidth <= 900;
     menuBtn.style.display = isMobile ? 'block' : 'none';
@@ -10,12 +16,14 @@ function setMenuState() {
     } else {
         navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
     }
+    updateMenuButton(isMobile && navLinks.classList.contains('active'));
 }
 
 function toggleMenu() {
     if (window.innerWidth > 900) return;
     navLinks.classList.toggle('active');
     navLinks.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+    updateMenuButton(navLinks.classList.contains('active'));
 }
 
 window.addEventListener('resize', setMenuState);
@@ -26,6 +34,7 @@ document.querySelectorAll('.nav-links a').forEach(function(link) {
         if (window.innerWidth <= 900) {
             navLinks.classList.remove('active');
             navLinks.style.display = 'none';
+            updateMenuButton(false);
         }
     });
 });
@@ -39,6 +48,9 @@ function getLastSunday(year, month) {
 }
 
 function getNextEventDate() {
+    const eventDateElement = document.getElementById("event-date");
+    if (!eventDateElement) return;
+
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     let year = today.getFullYear();
@@ -69,11 +81,13 @@ function getNextEventDate() {
         "OCTOBER", "NOVEMBER", "DECEMBER"
     ];
 
-    document.getElementById("event-date").textContent =
+    eventDateElement.textContent =
         day + suffix + " OF " + months[eventDate.getMonth()] + " " + year;
 }
 
 function scheduleEventDateUpdate() {
+    if (!document.getElementById("event-date")) return;
+
     const now = new Date();
     const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 
