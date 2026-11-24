@@ -10,6 +10,11 @@ class HomePageTests(TestCase):
         response = self.client.get("/")
 
         self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            '<meta name="google-site-verification" '
+            'content="-OxL56_gDHXZqjhdZZ-WWSw-xcpxhEjF1wa_MlC8NZ0">',
+        )
         sections = (
             "home",
             "about",
