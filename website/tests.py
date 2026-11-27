@@ -1,3 +1,4 @@
+import json
 import re
 from urllib.parse import unquote
 
@@ -45,6 +46,40 @@ class HomePageTests(TestCase):
         self.assertContains(response, "Pariwesh Rai")
         self.assertContains(response, "Worship Team 2026")
         self.assertContains(response, "CHRISTMAS SEASON")
+
+    def test_public_pages_have_canonical_and_search_metadata(self):
+        pages = (
+            ("", "NextGen in Christ | Christian Youth Community in Siliguri"),
+            ("story/", "Our Story | NextGen in Christ, Siliguri"),
+            ("team/", "Our Team | NextGen in Christ, Siliguri"),
+            ("gallery/", "Gallery | NextGen in Christ, Siliguri"),
+        )
+        for path, title in pages:
+            with self.subTest(path=path):
+                response = self.client.get(f"/{path}")
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(
+                    response,
+                    f'<link rel="canonical" href="https://nextgeninchrist.vercel.app/{path}">',
+                )
+                self.assertContains(response, f"<title>{title}</title>")
+                self.assertContains(response, 'property="og:title"')
+                self.assertContains(response, 'name="twitter:card"')
+
+    def test_homepage_has_valid_organization_structured_data(self):
+        response = self.client.get("/")
+        html = response.content.decode()
+        match = re.search(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+            html,
+            re.DOTALL,
+        )
+
+        self.assertIsNotNone(match)
+        organization = json.loads(match.group(1))
+        self.assertEqual(organization["@type"], "Organization")
+        self.assertEqual(organization["url"], "https://nextgeninchrist.vercel.app")
+        self.assertEqual(organization["areaServed"]["name"], "Siliguri")
 
     def test_homepage_uses_django_static_assets(self):
         response = self.client.get("/")
