@@ -1,15 +1,42 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block description %}NextGen in Christ is a Christian youth community in Siliguri focused on worship, Bible teaching, fellowship, outreach and helping young people grow in Christ.{% endblock %}">
-    <meta name="keywords" content="Christian youth group Siliguri, youth ministry Siliguri, Christian youth ministry, NextGen in Christ, church youth Siliguri">
     <meta name="author" content="NextGen in Christ">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="-OxL56_gDHXZqjhdZZ-WWSw-xcpxhEjF1wa_MlC8NZ0">
-    <title>{% block title %}Next_Gen in Christ{% endblock %}</title>
+    <link rel="canonical" href="{{ site_url }}{{ request.path }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="NextGen in Christ">
+    <meta property="og:title" content="{% block social_title %}NextGen in Christ | Christian Youth Community in Siliguri{% endblock %}">
+    <meta property="og:description" content="{% block social_description %}NextGen in Christ is a Christian youth community in Siliguri focused on worship, Bible teaching, fellowship, outreach and helping young people grow in Christ.{% endblock %}">
+    <meta property="og:url" content="{{ site_url }}{{ request.path }}">
+    <meta property="og:image" content="{{ site_url }}{% static 'website/images/logo1.png' %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% block twitter_title %}NextGen in Christ | Christian Youth Community in Siliguri{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}NextGen in Christ is a Christian youth community in Siliguri focused on worship, Bible teaching, fellowship, outreach and helping young people grow in Christ.{% endblock %}">
+    <title>{% block title %}NextGen in Christ | Christian Youth Community in Siliguri{% endblock %}</title>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "NextGen in Christ",
+            "url": "{{ site_url|escapejs }}",
+            "logo": "{{ site_url|escapejs }}{% static 'website/images/logo1.png' %}",
+            "description": "A Christian youth community in Siliguri focused on worship, Bible teaching, fellowship, and outreach.",
+            "areaServed": {
+                "@type": "City",
+                "name": "Siliguri"
+            },
+            "sameAs": [
+                "https://www.instagram.com/nextgeninchrist_/"
+            ]
+        }
+    </script>
     <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/hero.css' %}">
     <link rel="stylesheet" href="{% static 'website/css/navbar.css' %}">

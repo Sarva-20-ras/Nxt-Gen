@@ -64,7 +64,9 @@ Add these environment variables in the Vercel project settings:
   start without a persistent database.
 - `CLOUDINARY_URL`: the Cloudinary connection URL. Production refuses to start
   without durable image storage.
-- `SITE_URL`: `https://nextgeninchrist.vercel.app`.
+- `SITE_URL`: the public canonical origin, currently
+  `https://nextgeninchrist.vercel.app`. Set this to the primary custom domain if
+  one is connected; canonical links and the sitemap use this value.
 - `DJANGO_ALLOWED_HOSTS`: optional comma-separated hostnames if using a custom
   domain. Vercel preview and production domains ending in `.vercel.app` are
   allowed by default.
@@ -78,6 +80,12 @@ and `python manage.py createsuperuser` from a trusted local shell configured wit
 the production `DATABASE_URL` and `DJANGO_SECRET_KEY`. This creates the tables
 and the first private admin account. Do not run these commands against the
 development SQLite database if you intend to manage production content.
+
+After deployment, verify the site in Google Search Console and Bing Webmaster
+Tools, submit `https://<your-primary-domain>/sitemap.xml`, and use their URL
+inspection tools to request crawling. Search engines choose when to index and
+how to rank pages; metadata and a sitemap help discovery but cannot guarantee a
+specific position.
 
 ## Project layout
 
